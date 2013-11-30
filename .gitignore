@@ -1,0 +1,10 @@
+/**/bin/
+/**/.metadata/
+/**/*~/
+/**/target/
+/**/Debug/
+*.fossil
+/**/*.class
+/**/*.[o]
+*.[o]
+*.exe
