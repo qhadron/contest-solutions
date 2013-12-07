@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1385849695 source:c:\users\jack\desktop\dev\computerclass\filip.cpp
+	<iostream>
+	<string>
+
+1386433582 source:c:\users\jack\desktop\dev\computerclass\taskmaraton.cpp
+	<iostream>
+

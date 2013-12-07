@@ -32,6 +32,6 @@ int main ()
             reversednum += x * pow(2,tempstring.size()-i-1);
         }
         cout << reversednum << endl;
-             }
+     }
 
-             }
+}
