@@ -20,7 +20,6 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="prefixtopostfix.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
