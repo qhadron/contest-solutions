@@ -6,3 +6,28 @@
 1386433582 source:c:\users\jack\desktop\dev\computerclass\taskmaraton.cpp
 	<iostream>
 
+1386454317 source:c:\users\jack\desktop\dev\computerclass\graphnotes.cpp
+	<iostream>
+
+1387662579 source:c:\users\jack\desktop\dev\computerclass\projecteuler28.cpp
+	<cstring>
+	<iostream>
+	<set>
+
+1387061602 source:c:\users\jack\desktop\dev\computerclass\misspelling.cpp
+	<iostream>
+	<string>
+
+1387063589 source:c:\users\jack\desktop\dev\computerclass\graphtest.cpp
+	<iostream>
+	<queue>
+	<cstring>
+
+1387663770 source:c:\users\jack\desktop\dev\computerclass\boxes.cpp
+	<iostream>
+	<vector>
+
+1387669551 source:c:\users\jack\desktop\dev\computerclass\signage.cpp
+	<iostream>
+	<string>
+
