@@ -7,4 +7,12 @@
 /**/*.class
 /**/*.[o]
 *.[o]
-*.exe
+/**/*.exe
+/**/*.depend
+/**/*.layout
+/**/x64/
+/**/obj/
+*.log.txt
+/**/Profile/
+/**/Release/
+*.input.txt

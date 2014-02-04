@@ -3,10 +3,14 @@
 using namespace std;
 
 #define MAX 25
-#define DEBUG
+
 int ways[MAX+1][MAX+1],R,C,n,x,y;
 int main()
 {
+#ifdef PROFILE
+	freopen("0.input.txt", "r", stdin);
+#endif
+
     cin >> R >> C;
     cin >> n;
     while (n--) {
@@ -21,7 +25,7 @@ int main()
             ways[i][j]+=(ways[i][j-1]!=-1)?ways[i][j-1]:0;
         }
     }
-    #ifdef DEBUG
+    #ifdef _DEBUG
     for (int i = 1; i <= R; i++) {
         for (int j = 1; j <= C; j++) {
             if (ways[j][i]==-1)

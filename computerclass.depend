@@ -80,3 +80,11 @@
 1391308837 source:c:\users\jack\desktop\dev\computerclass\2012s5.cpp
 	<iostream>
 
+1391467405 source:e:\dev\computerclass\2012s4.cpp
+	<iostream>
+	<stack>
+	<queue>
+	<string>
+	<cstdio>
+	<set>
+
