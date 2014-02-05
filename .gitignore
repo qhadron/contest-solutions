@@ -13,6 +13,6 @@
 /**/x64/
 /**/obj/
 *.log.txt
-/**/Profile/
+/**/Profiles/
 /**/Release/
 *.input.txt
