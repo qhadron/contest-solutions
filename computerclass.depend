@@ -80,7 +80,7 @@
 1391308837 source:c:\users\jack\desktop\dev\computerclass\2012s5.cpp
 	<iostream>
 
-1391467405 source:e:\dev\computerclass\2012s4.cpp
+1391637940 source:e:\dev\computerclass\2012s4.cpp
 	<iostream>
 	<stack>
 	<queue>
@@ -94,4 +94,27 @@
 1391559819 source:e:\dev\computerclass\2013s4.cpp
 	<iostream>
 	<vector>
+
+1391637426 source:e:\dev\computerclass\2013s5.cpp
+	<iostream>
+	<vector>
+	<cstring>
+
+1391639388 source:e:\dev\computerclass\2011s1.cpp
+	<iostream>
+	<string>
+
+1391640039 source:e:\dev\computerclass\2011s2.cpp
+	<iostream>
+
+1391642992 source:e:\dev\computerclass\2011s3.cpp
+	<iostream>
+	<cstdio>
+
+1391646548 source:e:\dev\computerclass\2011s4.cpp
+	<iostream>
+
+1391832902 source:e:\dev\computerclass\2011s5.cpp
+	<iostream>
+	<bitset>
 
