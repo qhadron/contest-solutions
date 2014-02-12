@@ -17,6 +17,10 @@ bool empty() {
     return top < 0;
 }
 
+int top() {
+	return stack[top];
+}
+
 int pop() {
     return stack[top--];
 }
