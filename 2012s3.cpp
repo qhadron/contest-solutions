@@ -6,6 +6,8 @@ using namespace std;
 
 int n,curreading,readings[1000],l,sl;
 
+#define abs(x) (((x)<0)?-(x):(x))
+
 int main() {
     cin >> n;
     for (int i = 0; i < n; i++) {

@@ -351,7 +351,7 @@ int main ()
             if (board.check())
                 cout << board.moves << endl;
             else
-                cout << "IMMPOSSIBLE" << endl;
+                cout << "IMPOSSIBLE" << endl;
         }
         else
         {
