@@ -36,6 +36,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> c[i][0]>> c[i][1]>> c[i][2]>> c[i][3];
         m=0;
+        sort(c[i],c[i]+4);
         do {
             f(vector<int>(c[i]+1,c[i]+4),c[i][0]);
         } while (next_permutation(c[i],c[i]+4));

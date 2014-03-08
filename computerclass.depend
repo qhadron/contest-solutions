@@ -91,9 +91,11 @@
 1391556554 source:e:\dev\computerclass\2013s2.cpp
 	<iostream>
 
-1391559819 source:e:\dev\computerclass\2013s4.cpp
+1393211184 source:e:\dev\computerclass\2013s4.cpp
 	<iostream>
 	<vector>
+	<queue>
+	<cstring>
 
 1391637426 source:e:\dev\computerclass\2013s5.cpp
 	<iostream>
@@ -127,4 +129,17 @@
 	<iostream>
 	<vector>
 	<algorithm>
+
+1393208663 source:e:\dev\computerclass\2009s1.cpp
+	<iostream>
+
+1393216598 source:e:\dev\computerclass\2009s2.cpp
+	<iostream>
+	<set>
+	<cstring>
+	<bitset>
+
+1393276562 source:e:\dev\computerclass\2009s4.cpp
+	<iostream>
+	<cstring>
 

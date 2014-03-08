@@ -68,11 +68,6 @@
       <ProjName>computerclass</ProjName>
     </ProjBinary>
   </Binaries>
-  <Reports>
-    <Report>
-      <Path>Profiles\computerclass140204.vsp</Path>
-    </Report>
-  </Reports>
   <Launches>
     <ProjBinary>
       <Path>:PB:{368277AB-9B91-466F-8524-6EFE30471D80}|computerclass.vcxproj</Path>
