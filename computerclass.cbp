@@ -20,7 +20,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="../../ccc/s4.cpp" />
+		<Unit filename="countcycles.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
