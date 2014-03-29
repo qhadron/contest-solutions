@@ -99,7 +99,7 @@ void _qsort( rai start, rai end) {
 		
 	}
 	#ifdef DEBUG
-	print(start,end);
+	//print(start,end);
 	#endif
 	_qsort(start,m);
 	_qsort(m,end);
@@ -135,9 +135,6 @@ void merge( T* a, T* b, int left, int right, int end) {
 			++y;
 		}
 	}
-	//#ifdef DEBUG
-		print(b+left,b+end);
-	//#endif
 }
 
 //mergesort
@@ -159,9 +156,9 @@ void msort( T* start, T* end) {
 }
 
 
-#define SIZE 16382
+#define SIZE 32768
 #define CYCLES 1e4
-int ia[SIZE],qa[SIZE];
+int ia[SIZE],qa[SIZE],T[SIZE];
 
 void randomize( ) {
 	for (int i = 0; i < SIZE; ++i) {
@@ -176,30 +173,36 @@ void random(int * s, int * e) {
 }
 
 void test() {
+	random(T,T+SIZE);
 	long it,qt,t;
 	for (int i = 0; i < (int)CYCLES; ++i) {
-		randomize();
+		if (i&1023) random(T,T+SIZE);
+		memcpy(ia,T,sizeof(T));
+		memcpy(qa,T,sizeof(T));
 		t = clock();
-		msort(ia,ia+SIZE);
+		qsort(ia,ia+SIZE);
 		it += clock() - t;
 		t =  clock();
-		qsort(qa,qa+SIZE);
+		msort(qa,qa+SIZE);
 		qt+= clock() -  t;
 	}
-	printf("%s took %.3fs on average.","Merge-sort",((float)it/CLOCKS_PER_SEC)/CYCLES);
-	printf("%s took %.3fs on average.","Quick-sort",((float)qt/CLOCKS_PER_SEC)/CYCLES);
+	printf("%s took %.3fms on average.\n","Quick-sort",((double)it/CYCLES));
+	printf("%s took %.3fms on average.\n","Merge-sort",((double)qt/CYCLES));
 }
 
 int main() {
+	test();
+	return 0;
 	int a[]={9,8,7,6,5,4,2,1,3,0},b[10],c[10];
 	do {
 		print(a,a+10);
 		cout <<endl;
 		memcpy(b,a,sizeof(a));
 		memcpy(c,a,sizeof(a));
-		qsort(b,b+10);
+		sort(b,b+10);
 		cout << endl;
 		msort(c,c+10);
+		print(c,c+10);
 		cout << endl;
 		getchar();
 	} while (next_permutation(a,a+10));
