@@ -27,7 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\2009s4.cpp" />
+    <ClCompile Include="..\..\ecoo14_fischer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{368277AB-9B91-466F-8524-6EFE30471D80}</ProjectGuid>
