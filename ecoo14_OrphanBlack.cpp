@@ -1,4 +1,3 @@
-#include <cstdlib>
 #include <cstring>
 #include <iostream>
 
@@ -20,11 +19,10 @@ bool test(int start, bool inverted) {
 		cout << val << endl;
 		#endif
 		//checks message, records if valid
-		if ( val == 32 || (val >= 65 && val <= 90) ) {
+		if ( val == 32 || (val >= 65 && val <= 90) )
 			msg[cnt++] = (char)val;
-		} else {
+		else 
 			return false;
-		}
 	}
 	//done
 	return true;
@@ -47,7 +45,7 @@ int main(void) {
 		#endif
 		//start from the first character, all the way up the 7th character, break if done
 		for (int i = 0; i <= (N % 8); i++) {
-			if (test(i,true)||test(i,false)) break;
+			if (test(i,false)||test(i,true)) break;
 		}
 		cout << msg << endl;		//print message
 	}

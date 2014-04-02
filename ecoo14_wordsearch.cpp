@@ -14,10 +14,10 @@ bool flag;		//stores if the word is found or not
 void find(char* str) {
 	for (int i = 0; i < R; i++) {
 		for (int j = 0; j < C; j++) {		//loop through row and column
-		
+			//loop through all 8 directions
 			for (int x = -1; x <= 1; x++)
-				for (int y = -1; y <= 1; y++)	//loop through all 8 directions
-					if ((x||y)) {				//do not check if x = 0 and y = 0
+				for (int y = -1; y <= 1; y++)	
+					if ((x||y)) {				//skip if x = 0 and y = 0 (no direction)
 						
 						flag = true;			
 						for (int k = 0; k < strlen(str); k++) 
@@ -25,7 +25,6 @@ void find(char* str) {
 								flag = false;	//word not found
 								break;
 							}
-								
 						
 						if (flag) {		//word found
 							for (int k = 0; k < strlen(str); k++)
@@ -75,7 +74,8 @@ int main() {
 				find(words[i]);
 				
 			#ifdef DEBUG
-			for (int i = 0; i < R; i++,cout<<endl)
+			//print the map
+			for (int i = 0; i < R; i++,cout<<endl)	
 				for (int j = 0; j < C; j++)
 					if (!out[i][j])
 						cout << chars[i][j];
