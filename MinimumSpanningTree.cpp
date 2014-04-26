@@ -46,6 +46,17 @@ void prim(size_t n, int** costs, int* result) {
     }
 }
 
+
+/* Kruskal's Algorithm
+    --add edges until V-1 has been added (using disjoint set data structure)
+    1. sort all the edges
+    2. start from smallest edge; connect elements if they are not in the same set
+    2.1 when connecting, make a union of the sets the vertices belong to
+*/
+void kruskal(size_t n, int** costs, int* result) {
+
+}
+
 int main(void) {
 
 }

@@ -20,7 +20,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="countcycles.cpp" />
+		<Unit filename="penniesintherin.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

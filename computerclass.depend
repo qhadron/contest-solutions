@@ -146,3 +146,21 @@
 1395212792 source:e:\dev\computerclass\countcycles.cpp
 	<iostream>
 
+1396738476 source:c:\users\jack\desktop\dev\computerclass\tincantelephone.cpp
+	<iostream>
+	<algorithm>
+	<cmath>
+	<cstdio>
+
+1397949022 source:c:\users\jack\desktop\dev\computerclass\2003s5.cpp
+	<iostream>
+	<utility>
+	<queue>
+	<algorithm>
+
+1397950020 source:c:\users\jack\desktop\dev\computerclass\2003s5_prim.cpp
+	<iostream>
+	<queue>
+	<algorithm>
+	<cstdio>
+
