@@ -164,3 +164,18 @@
 	<algorithm>
 	<cstdio>
 
+1398553491 source:e:\dev\computerclass\ecoo14_s2_scratch.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+
+1398555022 source:e:\dev\computerclass\ecoo14_s2_blackandgrey.cpp
+	<iostream>
+
+1398582230 source:e:\dev\computerclass\ecoo14_s2_easysweeper.cpp
+	<iostream>
+	<algorithm>
+	<cstring>
+	<bitset>
+	<cstdio>
+
