@@ -1,0 +1,1 @@
+main(b,c,d){if(getchar()){}while(scanf("%d%c%d",&b,&c,&d)&&printf("%d\n",((c&=255)==43)?b+d:(c==45)?b-d:b*d)){}}
