@@ -22,12 +22,13 @@ void find(int x) {
     return (x!=p[x])?p[x]=find(p[x]):p[x];
 }
 
-void union(int u, int v) {
+void union(int x, int y) {
+	x = find(x);y = find(y);
     if (r[x] > r[y])
         p[y] = x;
     else {
         p[x] = y;
         if (r[x]==r[y])r[y]++;
     }
-    }
+}
 
