@@ -172,10 +172,47 @@
 1398555022 source:e:\dev\computerclass\ecoo14_s2_blackandgrey.cpp
 	<iostream>
 
-1398582230 source:e:\dev\computerclass\ecoo14_s2_easysweeper.cpp
+1408826558 source:e:\dev\computerclass\ecoo14_s2_easysweeper.cpp
 	<iostream>
 	<algorithm>
 	<cstring>
 	<bitset>
 	<cstdio>
+
+1413070241 source:e:\dev\computerclass\peg_checkerboard_hard.cpp
+	<iostream>
+	<cstdio>
+
+1413084074 source:e:\dev\computerclass\peg_checkerboard_easy.cpp
+	<iostream>
+	<cstdio>
+
+1413123432 source:e:\dev\computerclass\peg_acmtryouts1b.cpp
+	<cstdio>
+	<cstring>
+	<vector>
+
+1413125575 source:e:\dev\computerclass\peg_acmtryouts1c.cpp
+	<cstdio>
+
+1413135179 source:e:\dev\computerclass\peg_acmtryouts1d.cpp
+	<cstdio>
+	<cstring>
+	<utility>
+
+1413137645 source:e:\dev\computerclass\peg_aplusb2.cpp
+	<cstdio>
+	<cstring>
+	<algorithm>
+
+1413686349 source:e:\dev\computerclass\peg_wc99sp1.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+
+1414280240 source:e:\dev\computerclass\peg_camera.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	<vector>
 

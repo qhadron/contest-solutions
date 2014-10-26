@@ -26,6 +26,9 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\RevDig.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{368277AB-9B91-466F-8524-6EFE30471D80}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
