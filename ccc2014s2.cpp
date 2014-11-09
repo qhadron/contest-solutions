@@ -12,7 +12,7 @@ int main() {
     for (int i = 1; i <= n; i++) cin >> row2[i];
     if (n&1) {cout << "bad"; return 0;}
     for (int i = 1; i <= n; i++) {
-        if (row1[i]==row2[i]) {cout << "bad" << return 0;}
+        if (row1[i]==row2[i]) {cout << "bad" << endl; return 0;}
         for (int j = 1; j <= n;j++) {
             if (row1[j]==row2[i]) {
                 if (row2[j]==row1[i]) break;
@@ -20,5 +20,5 @@ int main() {
             }
         }
     }
-    cout <<"good";
+    cout <<"good" << endl;;
 }
