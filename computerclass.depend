@@ -216,3 +216,75 @@
 	<cstdio>
 	<vector>
 
+1414882732 source:e:\dev\computerclass\2002s5.cpp
+	<cstdio>
+	<iostream>
+	<cstring>
+
+1415568805 source:e:\dev\computerclass\ccc2014j2.cpp
+	<iostream>
+	<cstdio>
+	<algorithm>
+
+1415569860 source:e:\dev\computerclass\ccc2014j3.cpp
+	<iostream>
+	<cstdio>
+	<algorithm>
+
+1415570319 source:e:\dev\computerclass\ccc2014j4.cpp
+	<iostream>
+	<cstdio>
+	<algorithm>
+
+1417368631 source:e:\dev\computerclass\ccc2014s5.cpp
+	<cstdio>
+	<utility>
+	<queue>
+	<algorithm>
+	<set>
+
+1415590842 source:e:\dev\computerclass\ccc2000s3.cpp
+	<iostream>
+	<cstdio>
+	<algorithm>
+	<unordered_map>
+
+1415594167 source:e:\dev\computerclass\ccc2001s3.cpp
+	<iostream>
+	<cstdio>
+	<vector>
+	<string>
+	<cstring>
+
+1416344147 source:e:\dev\computerclass\dmoj_cutting_log.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<algorithm>
+	<cstdlib>
+	<string>
+
+1416346887 source:e:\dev\computerclass\dmoj_sawmill.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<algorithm>
+	<cstdlib>
+	<string>
+
+1416471888 source:e:\dev\computerclass\dmoj_sawmillscheme.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<algorithm>
+	<cstdlib>
+	<vector>
+	<queue>
+
+1416353018 source:e:\dev\computerclass\dmoj_selectivecutting.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<algorithm>
+	<cstdlib>
+

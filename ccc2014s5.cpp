@@ -26,9 +26,9 @@ int cdist(int a, int b) {
 }
 
 int main() {
-    //#ifdef _DEBUG
-    freopen("input.txt","r",stdin);
-   //#endif // _DEBUG
+#ifdef _DEBUG
+    freopen("input.txt", "r", stdin);
+#endif // _DEBUG
     scanf("%d", &N);
     for(int i = 1; i <= N; ++i) {
         scanf("%d%d", &x[i], &y[i]);
@@ -43,7 +43,7 @@ int main() {
     sort(dist, dist + cnt);
     pii cur;
     set<int> Set;
-    for(int i = 0; i < cnt; ) {
+    for(int i = 0; i < cnt;) {
         Set.clear();
         do {
             cur = dist[i].second;
@@ -57,12 +57,12 @@ int main() {
             if(cur.first) {
                 Set.insert(cur.second);
             }
-			i += 1;
-        } while(i < cnt && dist[i-1].first == dist[i].first);
+            i += 1;
+        } while(i < cnt && dist[i - 1].first == dist[i].first);
         for(auto it = Set.begin(); it != Set.end(); ++it) {
             dp[*it] = dp2[*it];
         }
-	}
+    }
     printf("%d\n", dp[0] + 1);
 }
 

@@ -8,7 +8,7 @@ using namespace std;
 #define scan(x) do {while ((x=getchar())<'0'); for (x-='0';(_=getchar())>='0'; x = (x<<1)+(x<<3)+_-'0');} while(0)
 char _;
 #ifdef _DEBUG
-#define dvar(x) cout << #x << ":" << x << endl
+#define dvar(x) cout << (#x) << ":" << (x) << endl
 #define dprintf(...) printf(__VA_ARGS__)
 #define dprintfn(...) printf(__VA_ARGS__),putchar('\n')
 #else
