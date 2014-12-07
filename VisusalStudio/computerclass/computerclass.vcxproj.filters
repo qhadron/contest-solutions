@@ -15,8 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\RevDig.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <Text Include="..\..\input.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="..\..\template.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
