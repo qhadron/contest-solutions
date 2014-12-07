@@ -1,89 +1,79 @@
 #include <iostream>
 #include <cstdio>
 #include <algorithm>
+#include <vector>
 
 using namespace std;
 
-#define scan(x) while ((x=getchar())<'0'); for (x-='0';(_=getchar())>='0'; x = (x<<1)+(x<<3)+_-'0');
-char _;
+#ifdef _DEBUG
+#define dvar(x) cout << (#x) << ":" << (x) << endl
+#define dprintf(...) printf(__VA_ARGS__)
+#define dprintfn(...) printf(__VA_ARGS__),putchar('\n')
+#else
+#define dvar(...)
+#define dprintf(...)
+#define dprintfn(...)
+#endif
+
+struct seg {
+	int x, y1, y2, t;
+	bool operator< (const seg& other) {
+		return x < other.x;
+	}
+};
+
+#define MAX 3000
 
 typedef long long ll;
 
-struct seg
-{
-    int x,y1,y2,val;
-    bool flag;//first(1) or last(0)
-    seg(){};
-    seg(int a, int b, int c, ll d, bool fl) {
-        x=a,y1=b,y2=c,val=d,flag=fl;
-    }
-} point [3001];
-int n,c,t,indy,len,ind,val,segy[3001],x1,y1,x2,y2,st,ed;
-ll ans,line[3001];
+int N, T, yvals[MAX], numy;
+ll res, line[MAX];
+vector<seg> segs;
 
-int findy(int x) { // binary search
-    int l = 1, h=len;
-    while (l<h) {
-        int mid=(l+h)>>1;
-        if (segy[mid]>=x) h=mid;
-        else l=mid+1;
-    }
-    return l;
-}
-
-bool cmp(seg p1, seg p2) {
-    return p1.x<p2.x;
+//bs for x in segs
+int bs(int x) {
+	int l = 0, r = numy - 1, m;
+	while (l < r) {
+		m = (l + r) >> 1;
+		if (x <= yvals[m])
+			r = m;
+		else
+			l = m + 1;
+	}
+	return l;
 }
 
 int main() {
-    scan(n);scan(t);
-    indy=ind=1;//index
-    for (int i = 0; i < n ; i++) {
-        scan(x1)
-        scan(y1)
-        scan(x2)
-        scan(y2)
-        scan(val)
-        point[ind++]=seg(x1,y2,y2,val,true);
-        point[ind++]=seg(x2,y1,y2,val,false);
-        segy[indy++]=y1;
-        segy[indy++]=y2;
-    }
-    sort (point+1,point+ind,cmp);
-    sort (segy+1,segy+indy);
-    len=unique(segy+1,segy+indy)-(segy+1);
-    for (int i = 1; i < ind; i++) {
-        for (int j = 1; j < len; j++) {
-            if (line[j]>=t)
-                ans+=(ll)(segy[j+1]-segy[j])*(point[i].x-point[i-1].x);
-        }
-        if (point[i].flag)
-            c=point[i].val;
-        else
-            c=-point[i].val;
-            st=findy(point[i].y1); ed=findy(point[i].y2);
-        for (int j=st;j<ed;j++)line[j]+=c;
-    }
-    printf("%lld",ans);
+#if defined _DEBUG || defined NDEBUG
+	freopen("input.txt", "r", stdin);
+#endif
+	scanf("%d%d", &N, &T);
+	for (int i = 0; i < N; ++i) {
+		int l, t, r, b, ti;
+		scanf("%d%d%d%d%d", &l, &t, &r, &b, &ti);
+		
+		segs.push_back({ l, t, b, ti });
+		segs.push_back({ r, t, b, -ti });
+		yvals[numy++] = t;
+		yvals[numy++] = b;
+	}
+	//sort all segments
+	sort(segs.begin(), segs.end());
+	numy = unique(yvals, yvals + numy) - yvals;
+	sort(yvals, yvals + numy);
+	for (int i = 0; i < segs.size(); ++i) {
+		if (i != 0)
+		for (int j = 0; j < numy; ++j) {
+			if (line[j] >= T) {
+				dvar(line[j]);
+				dprintfn("res+=(%d-%d)*(%d-%d)", yvals[j + 1], yvals[j], segs[i].x, segs[i - 1].x);
+				res += (ll) (yvals[j+1] - yvals[j]) * (ll) (segs[i].x - segs[i - 1].x);
+			}
+		}
+		int st = bs(segs[i].y1), ed = bs(segs[i].y2);
+		dprintfn("Adding %d to [%d,%d]", segs[i].t, yvals[st], yvals[ed]);
+		for (int j = st; j < ed; ++j)
+			line[j] += segs[i].t;
+	}
+	cout << res << endl;
 }
-
-
-
-/**
-question:
-    lay glass to get to a tint factor (T)
-    overlapping glasses add their tint factors
-    glass given by top-left coord and bot-right coord
-
-solution:
-    sweep line algorithm:
-        sort the y values, removing duplicates
-        loop {
-        1.imagine a line sweeping from left to right
-            if meet a glass
-                add 1 to tint from top to bot
-            else if leave glass
-                sub 1 from tint from top to bot
-        2. if greater or equal to T, add 1 to total
-        }end loop
-*/
