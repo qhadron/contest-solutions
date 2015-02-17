@@ -24,11 +24,10 @@ void find(int x) {
 
 void union(int x, int y) {
 	x = find(x);y = find(y);
-	if (x == y) return;
-	if (r[x] < r[y])
-        p[x] = y;
-    else {
+    if (r[x] > r[y])
         p[y] = x;
+    else {
+        p[x] = y;
         if (r[x]==r[y])r[y]++;
     }
 }

@@ -1,4 +1,4 @@
-#define DFS
+#define BFS
 
 #include <iostream>
 
@@ -14,6 +14,7 @@
 using namespace std;
 
 #define MAX 8
+#define NDEBUG
 #ifndef NDEBUG
 //#define DEBUG2 //used to debug coinstack
 #define DEBUG1 // used to debug board (redirects output to log.txt)

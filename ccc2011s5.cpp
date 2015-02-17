@@ -17,11 +17,12 @@ int n,l[MAX],steps[MAX],f,e,x,c,temp,found;
 void flip(int& l, int pos)
 {
     if (l==0) return;
-    int start,end;
+    int start=-2,end=-2;
     for (start=pos; start>=0;)if (!(l&(1<<--start))) break;
     for (end=pos; end<n;) if (!(l&(1<<++end))) break;
     start++;
     end--;
+    if (start==-2||end==-2)return;
 #ifdef DEBUG1
     cout << bitset<8>(l) << endl << bitset<8> (((1<<(end-start+1))-1)<<start) << endl;
 #endif // DEBUG
@@ -34,8 +35,8 @@ void flip(int& l, int pos)
 int main ()
 {
     cin >> n;
-	for (int i = 0, a; i < n; i++)
-		(cin >> a), x = (x << 1) | a;// (a << (n - i - 1));
+    for (int i =0,a ; i < n ; i++)
+        (cin>>a),x|=(a<<(n-i-1));
     steps[x]=0;
     c=1;
     l[(f=e=0)]=x;
@@ -64,7 +65,6 @@ int main ()
                 }
             }
         }
-		if (found) break;
     }
     cout << steps[0] << endl;
 }
