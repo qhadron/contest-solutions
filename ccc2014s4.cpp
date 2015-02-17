@@ -17,10 +17,13 @@ using namespace std;
 
 struct seg {
 	int x, y1, y2, t;
-	bool operator< (const seg& other) {
-		return x < other.x;
-	}
+	seg(int a, int b, int c, int d) : x(a), y1(b), y2(c), t(d){};
+
 };
+
+bool operator< (const seg& a, const seg &b) {
+	return a.x < b.x;
+}
 
 #define MAX 3000
 
@@ -52,8 +55,8 @@ int main() {
 		int l, t, r, b, ti;
 		scanf("%d%d%d%d%d", &l, &t, &r, &b, &ti);
 		
-		segs.push_back({ l, t, b, ti });
-		segs.push_back({ r, t, b, -ti });
+		segs.push_back(seg( l, t, b, ti ));
+		segs.push_back(seg( r, t, b, -ti ));
 		yvals[numy++] = t;
 		yvals[numy++] = b;
 	}

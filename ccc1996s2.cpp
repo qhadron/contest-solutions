@@ -24,8 +24,7 @@ int main() {
     getline(cin,s);
     while (n--) {
         getline(cin,s);
-        b=s.substr(0,s.size()-1);
-        s=b;
+        b=string(s);
         while (s.size()>2) {
             x=s[s.size()-1]-'0';
             #ifdef OUT
