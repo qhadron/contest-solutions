@@ -31,7 +31,7 @@
     <Text Include="..\..\template.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h" />
+    <ClCompile Include="..\..\ccc2010s2.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{368277AB-9B91-466F-8524-6EFE30471D80}</ProjectGuid>

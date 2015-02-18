@@ -59,7 +59,7 @@ int main() {
             }
             i += 1;
         } while(i < cnt && dist[i - 1].first == dist[i].first);
-        for(auto it = Set.begin(); it != Set.end(); ++it) {
+        for(set<int>::iterator it = Set.begin(); it != Set.end(); ++it) {
             dp[*it] = dp2[*it];
         }
     }
