@@ -140,6 +140,7 @@ void add_tree(int l, int r, int val) {
 	_add_tree(1, l, r, val);
 }
 
+//query in range[l,r]
 int _query(int cur, int l, int r) {
 	if (l > r) {
 		dprintfn("WTF?");
