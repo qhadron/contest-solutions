@@ -155,6 +155,11 @@ void checkall() {
 bool dfs(Cell* cur) {
 	if (pqueue.empty())
 		return true;
+	if (cur == nullptr) {
+		cur = pqueue.top();
+		pqueue.pop();
+	}
+	assert(cur != nullptr);
 	if (cur->value) {
 		dprintf("[%d,%d] is %d\n", cur->x, cur->y, cur->value);
 		//chose next best cell from priority_queue
@@ -170,15 +175,15 @@ bool dfs(Cell* cur) {
 		}
 	}
 	dprintf("At [%d,%d]\n", cur->x, cur->y);
-	for (int i = 1,use; i <= 9; ++i) {
+	for (int i = 1, use; i <= 9; ++i) {
 		if (cur->possibleValues[i]) {
-			dprintf("Trying [%d,%d] from [%d,%d]\n");
+			dprintf("Trying value %d at [%d,%d]\n", i, cur->x, cur->y);
 			use = true;
 			//row
 			for (int x = 0; x < 9; ++x)
 				if (board[x][cur->y]->value == i) {
 					dprintf("\tFailed: Row test at [%d,%d]\n", x, cur->y);
-					use=false;
+					use = false;
 					break;
 				}
 			if (!use)
@@ -194,7 +199,7 @@ bool dfs(Cell* cur) {
 				continue;
 			//grid
 			for (int x = cur->x / 3, dx = 0; dx < 3; ++dx) {
-				for (int y = cur->y / 3, dy = 0;use && dy < 3; ++dy) {
+				for (int y = cur->y / 3, dy = 0; use && dy < 3; ++dy) {
 					if (board[x][y]->value == i) {
 						dprintf("\tFailed: Grid test at [%d,%d]\n", x, y);
 						use = false;
@@ -204,21 +209,23 @@ bool dfs(Cell* cur) {
 			}
 			if (!use)
 				continue;
-			dprintf("\tSetting value of [%d,%d] to %d\n", cur->x, cur->y, cur->value);
 			cur->possibilities = 1;
 			cur->value = i;
+			dprintf("\tSetting value of [%d,%d] to %d\n", cur->x, cur->y, cur->value);
 			checkall();
 			//chose next best cell from priority_queue
 			Cell* temp = pqueue.top();
 			pqueue.pop();
-			if (dfs(temp))
+			if (dfs(temp)) {
 				return true;
+			}
 			else {
 				//reinsert node upon failure
 				pqueue.push(temp);
 			}
 		}
 	}
+	return false;
 }
 
 Cell::~Cell() {
@@ -276,6 +283,9 @@ int main() {
 				tests.push_back(temp);
 			}
 
+
+
+
 #if _VERBOSE
 		printf("%d tests in total:\n", tests.size());
 		for (Test* cur : tests) {
@@ -283,29 +293,24 @@ int main() {
 		}
 #endif
 		bool succeeded = true;
-#if _SOLVE_BY_CELL
 		for (int i = 0; i < BOARD_X; ++i)
 			for (int j = 0; j < BOARD_Y; ++j)
 				if (!board[i][j]->value)
 					pqueue.push(board[i][j]);
 		pqueue.update(cellcount);
 
+		succeeded = dfs(nullptr);
+
+		if (false)
 		while (!pqueue.empty()) {
 			checkall();
-#if _VERBOSE
-			printpossible();
-#endif
 			Cell* cur = pqueue.top();
 			pqueue.pop();
 			assert(cur != nullptr);
-#ifdef _DEBUG
-			printf("At (%d,%d): val:%4d pos:%4d\n", cur->x, cur->y, cur->value, cur->possibilities);
-#endif
+			dprintf("At (%d,%d): val:%4d pos:%4d\n", cur->x, cur->y, cur->value, cur->possibilities);
 			if (cur->possibilities) {
 				if (cur->value != 0) {
-#ifdef _DEBUG
-					printf("The only possible number in [%d,%d] is %d.\n", cur->x, cur->y, cur->value);
-#endif
+					dprintf("The only possible number in [%d,%d] is %d.\n", cur->x, cur->y, cur->value);
 					continue;
 				}
 				else {
@@ -320,11 +325,11 @@ int main() {
 				break;
 			}
 		}
-#else
-#endif
 		if (!succeeded) {
 			cout << "Failed. Current board: " << endl;
 		}
+
+
 		print();
 		exit();
 	}

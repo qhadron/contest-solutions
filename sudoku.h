@@ -13,7 +13,6 @@
 #define BOARD_Y 9
 
 #define _VERBOSE 0
-#define _SOLVE_BY_CELL 1
 
 #ifdef _DEBUG
 #define dprintf printf
@@ -72,15 +71,9 @@ bool dfs(Cell* cur);
 
 struct Comparator
 {
-#if _SOLVE_BY_CELL
 	bool operator() (const Cell* a, const Cell* b) {
 		return a->possibilities > b->possibilities;
 	}
-#else
-	bool operator() (const Test* a, const Test* b) {
-		return a->cnt > b->cnt;
-	}
-#endif
 };
 
 template <typename T, class Container, class Comp>
@@ -139,8 +132,6 @@ private:
 
 Cell* board[BOARD_X][BOARD_Y];
 list<Test*> tests;
-#if _SOLVE_BY_CELL
+
 priority_queue<Cell*, vector<Cell*>, Comparator> pqueue;
-#else
-priority_queue<Test*, vector<Test*>, Comparator> pqueue;
-#endif
+
