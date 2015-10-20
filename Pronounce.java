@@ -80,7 +80,7 @@ public class Pronounce {
 			OutputStream out = new FileOutputStream(file);
 			for (URL url : urls) {
 				URLConnection connection = url.openConnection();
-				connection.setRequestProperty("User-Agent","Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36");
+				connection.setRequestProperty("User-Agent","Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.71 Safari/537.36");
 				connection.setRequestProperty("Referer","http://www.gstatic.com/translate/sound_player2.swf");
 				connection.connect();
 				System.out.println(url.toString());
